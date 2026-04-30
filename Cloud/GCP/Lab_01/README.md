@@ -43,4 +43,4 @@ Run the following command:
 terraform --version
 ```
 The output will be: 
-!(/images/image1.png)
+![Screenshot](/images/image1.png)
