@@ -41,3 +41,6 @@ Run the following command:
 
 ```bash
 terraform --version
+```
+The output will be: 
+!(/images/image1.png)
