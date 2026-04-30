@@ -124,10 +124,15 @@ resource "google_compute_instance" "terraform" {
   }
 }
 ```
-5. Save the ```main.tf``` file by clicking **File > Save**.
-6. Run the ```terraform plan``` command to preview if the compute engine will be created.
+6. Save the ```main.tf``` file by clicking **File > Save**.
+7. Run the ```terraform plan``` command to preview if the compute engine will be created.
 ```bash
 terraform plan
 ```
 Click **Authorize** when prompted. The output should look like this:
-
+![Screenshot](./images/output.png)
+8. Apply the desired changes by running the following command.
+```bash
+terraform apply
+```
+9. Confirm the planned actions by typing ```yes```.
