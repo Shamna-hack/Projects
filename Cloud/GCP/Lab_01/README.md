@@ -42,5 +42,5 @@ Run the following command:
 ```bash
 terraform --version
 ```
-The output will be: 
-![Screenshot](/images/image1.png)
+The output will be:   
+![Screenshot](./terraform_version.png)
