@@ -1,4 +1,4 @@
-# Infrastructure as Code (IaC) with Terraform
+# Infrastructure as Code (IaC) with Terraform (Google Cloud)
 
 ## 📌 Overview
 This lab demonstrates how to use **Terraform** to manage infrastructure on **Google Cloud Platform (GCP)**. You will learn how to configure Terraform, define resources, and perform lifecycle operations such as creation, modification, and deletion.
