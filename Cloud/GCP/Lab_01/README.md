@@ -31,7 +31,7 @@ terraform --version
 ```
 
 The output will be:   
-![Screenshot](./terraform_version.png)
+![Screenshot](./images/terraform_version.png)
 
 ### Step 2 - Add Google Cloud Provider
 
@@ -83,4 +83,51 @@ resource "google_compute_instance" "terraform" {
 terraform plan
 ```
 4. The configuration fails with the following error. This is because you cannot configure a compute engine without a network.
+![Screenshot](./images/configuration_error.png)
+5. Add the network by including the following code to the ```google_compute_instance``` block.
+```bash
+network_interface {
+    network = "default"
+    access_config {
+    }
+}
+```
+The final code in ```main.tf``` file will look like this:
+```bash
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+  }
+}
+
+provider "google" {
+
+  project = "Project ID"
+  region  = "Region"
+  zone    = "Zone"
+}
+
+resource "google_compute_instance" "terraform" {
+  name         = "terraform"
+  machine_type = "e2-micro"
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
+}
+```
+5. Save the ```main.tf``` file by clicking **File > Save**.
+6. Run the ```terraform plan``` command to preview if the compute engine will be created.
+```bash
+terraform plan
+```
+Click **Authorize** when prompted. The output should look like this:
 
